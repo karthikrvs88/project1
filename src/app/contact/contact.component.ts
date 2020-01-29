@@ -9,7 +9,7 @@ import { PersonalData, ContactRequest } from '../models/contact-request';
 })
 export class ContactComponent implements OnInit {
 
-  countries = ['USA', 'Germany', 'Italy', 'France'];
+  countries = ['India', 'USA', 'Italy', 'France'];
 
   requestTypes = ['Claim', 'Feedback', 'Help Request'];
 

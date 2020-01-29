@@ -1,21 +1,25 @@
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
     <div formGroupName="personalData" novalidate>
-      <input formControlName="email" /> <br />
-      <input formControlName="mobile" /> <br />
-      <select formControlName="country"> <br />
+     Email :  <input formControlName="email" /> <br />
+     Mobile : <input formControlName="mobile" /> <br />
+     Country : <select formControlName="country"> <br />
         <option *ngFor="let country of countries" [value]="country"
           >{{country}}</option
         >
       </select>
     </div>
-    <select formControlName="requestType"> 
+   Request Type : <select formControlName="requestType"> 
       <option *ngFor="let requestType of requestTypes" [value]="requestType"
         >{{requestType}}</option
       >
     </select><br />
-    <input formControlName="text" /> <br />
+   Comments : <textarea formControlName="text"></textarea>  <br />
     <button type="submit" [disabled]="contactForm.pristine">Save</button>
     <button type="reset" (click)="revert()" [disabled]="contactForm.pristine">
       Revert
     </button>
+
+    <div><p>
+      Form Value: {{ contactForm.value | json }}
+    </p></div> 
   </form>
